@@ -105,14 +105,16 @@ namespace Drawing
             double t = sphere.is_hit(r);
             if (t > 0)
             {
-
-                return new Vec3(1, 0, 0);
+                Vec3 N = (r.point_at_parameter(t)- sphere.center).normalize();
+                return new Vec3(N.x + 1, N.y + 1, N.z + 1)*0.5;
             }
+
 
             Vec3 unit_dir = r.dir.normalize();
             t = 0.5 * (unit_dir.y + 1);
-
-            return new Vec3(1.0, 1.0, 1.0) * (1.0 - t) + new Vec3(0.5, 0.7, 1.0) * t;
+            Vec3 a = new Vec3(1, 1, 1)*(1 - t);
+            a = a+(new Vec3(0.5, 0.7, 1.0)*(t));
+            return a;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -120,22 +122,22 @@ namespace Drawing
             //capture up arrow key
             if (keyData == Keys.Up)
             {
-                sphere.center.z -= 0.1;
+                sphere.center.z += 0.1;
             }
             //capture down arrow key
             if (keyData == Keys.Down)
             {
-                sphere.center.z += 0.1;
+                sphere.center.z -= 0.1;
             }
             //capture left arrow key
             if (keyData == Keys.Left)
             {
-                sphere.center.x += 0.1;
+                sphere.center.x -= 0.1;
             }
             //capture right arrow key
             if (keyData == Keys.Right)
             {
-                sphere.center.x -= 0.1;
+                sphere.center.x += 0.1;
             }
             Paint();
 
