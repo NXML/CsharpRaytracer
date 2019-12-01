@@ -18,6 +18,13 @@ namespace Drawing.Model
             this.y = y;
             this.z = z;
         }
+
+        public static Vec3 zero()
+        {
+            return new Vec3(0, 0, 0);
+        }
+
+
         public double length() {
             return Math.Sqrt(x*x +y* y + z*z);
         }
@@ -71,6 +78,10 @@ namespace Drawing.Model
             return new Vec3(this.x/l,this.y/l,this.z/l);
         }
 
+        public String toString()
+        {
+            return " x:" + x + " y: " + y + " z: " + z;
+        }
 
 
 

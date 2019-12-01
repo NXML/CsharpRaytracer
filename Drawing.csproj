@@ -55,8 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Hitable.cs" />
+    <Compile Include="Model\Hitable_List.cs" />
+    <Compile Include="Model\Hit_Record.cs" />
     <Compile Include="Model\Ray.cs" />
     <Compile Include="Model\Sphere.cs" />
+    <Compile Include="Model\Utils\Vloner.cs" />
     <Compile Include="Model\Vec3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

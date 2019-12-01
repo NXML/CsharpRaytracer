@@ -1,6 +1,6 @@
 ﻿namespace Drawing.Model
 {
-    internal class Ray
+    public class Ray
     {
         public Vec3 origin;
         public Vec3 dir;
