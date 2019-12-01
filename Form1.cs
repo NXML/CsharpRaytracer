@@ -28,7 +28,7 @@ namespace Drawing
         Hitable_List world = new Hitable_List();
         Graphics graphics;
 
-        Sphere S1 = new Sphere(new Vec3(0, -100.5, -1), 100);
+        Sphere S1 = new Sphere(new Vec3(0, -10020, -1), 10000);
         Sphere S2 = new Sphere(new Vec3(0, 0, -2), 0.5);
         Thread thread1;
 
